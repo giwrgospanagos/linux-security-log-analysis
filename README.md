@@ -28,9 +28,10 @@ The objective was to identify failed login attempts, analyze suspicious authenti
 
 - Linux
 - Bash
-- Python
+- Python 3
 - SSH log analysis
 - WSL2
+- Nmap
 
 ## Analysis Performed
 
@@ -42,15 +43,24 @@ The authentication log was analyzed to identify:
 4. Repeated authentication failures
 5. Potential brute-force sources
 
+A local Windows host was also analyzed using Nmap to identify exposed services and SMB protocol support.
+
 ## Results
 
-The analysis identified:
+The authentication log analysis identified:
 
 - `192.168.1.50` — 3 failed attempts
 - `10.0.0.15` — 3 failed attempts
 - `admin` — 4 failed attempts
 
 The Python script automatically identified both IP addresses as potential brute-force sources based on the configured threshold of 3 or more failed attempts.
+
+The Nmap assessment identified several open Windows services, including:
+
+- TCP/135 — Microsoft Windows RPC
+- TCP/139 — NetBIOS
+- TCP/445 — SMB
+- TCP/5985 — WinRM / HTTP
 
 ## Python Automation
 
@@ -63,18 +73,24 @@ It:
 - Identifies potential brute-force sources
 
 Run the analysis with:
+Evidence
 
-```bash
-python3 analyze_logs.py
+Screenshots from the Nmap scans and Python log analysis are included in the repository:
 
+nmap-basic-scan.txt.png
+nmap-service-scan.txt.png
+smb-protocols.txt.png
+python-log-analysis.png
 Project Structure
 linux-security-log-analysis/
 │
 ├── README.md
 ├── analyze_logs.py
 ├── auth-lab.log
-│
-├── evidence/
+├── nmap-basic-scan.txt.png
+├── nmap-service-scan.txt.png
+├── smb-protocols.txt.png
+├── python-log-analysis.png
 │
 └── report/
     └── security-assessment.md
@@ -89,3 +105,6 @@ Disclaimer
 This project uses simulated authentication log data for educational purposes.
 
 No unauthorized systems or accounts were targeted.
+
+```bash
+python3 analyze_logs.py
