@@ -77,10 +77,10 @@ Run the analysis with:
 
 Screenshots from the Nmap scans and Python log analysis are included in the repository:
 
-nmap-basic-scan.txt.png
-nmap-service-scan.txt.png
-smb-protocols.txt.png
-python-log-analysis.png
+- `nmap-basic-scan.txt.png`
+- `nmap-service-scan.txt.png`
+- `smb-protocols.txt.png`
+- `python-log-analysis.png`
 
 ## Project Structure
 
