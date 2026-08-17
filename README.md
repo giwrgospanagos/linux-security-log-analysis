@@ -84,6 +84,7 @@ python-log-analysis.png
 
 ## Project Structure
 
+```text
 linux-security-log-analysis/
 │
 ├── README.md
@@ -96,6 +97,7 @@ linux-security-log-analysis/
 │
 └── report/
     └── security-assessment.md
+```
     
 ## Security Considerations
 
