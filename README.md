@@ -73,7 +73,7 @@ It:
 - Identifies potential brute-force sources
 
 Run the analysis with:
-Evidence
+## Evidence
 
 Screenshots from the Nmap scans and Python log analysis are included in the repository:
 
@@ -81,7 +81,9 @@ nmap-basic-scan.txt.png
 nmap-service-scan.txt.png
 smb-protocols.txt.png
 python-log-analysis.png
-Project Structure
+
+## Project Structure
+
 linux-security-log-analysis/
 │
 ├── README.md
@@ -94,13 +96,14 @@ linux-security-log-analysis/
 │
 └── report/
     └── security-assessment.md
-Security Considerations
+    
+## Security Considerations
 
 Repeated failed authentication attempts can indicate password guessing or brute-force activity.
 
 In a real environment, repeated authentication failures should be investigated and appropriate controls such as account lockout policies, firewall restrictions, strong authentication and monitoring should be considered.
 
-Disclaimer
+## Disclaimer
 
 This project uses simulated authentication log data for educational purposes.
 
